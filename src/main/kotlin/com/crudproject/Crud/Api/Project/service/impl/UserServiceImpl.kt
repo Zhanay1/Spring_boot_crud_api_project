@@ -11,10 +11,7 @@ import org.springframework.data.domain.Pageable
 import java.util.*
 
 @Service
-class UserServiceImpl: UserService {
-
-    @Autowired
-    lateinit var userRepository: UserRepository
+class UserServiceImpl(var userRepository: UserRepository): UserService {
 
     override fun addUser(user: User): User {
         return userRepository.save(user)
