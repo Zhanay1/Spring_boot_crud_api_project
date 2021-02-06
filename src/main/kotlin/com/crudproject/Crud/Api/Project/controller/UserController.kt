@@ -12,10 +12,7 @@ import org.springframework.http.ResponseEntity;
 @RestController
 @RequestMapping("/api/v1/")
 @Api(value = "User registration")
-class UserController{
-
-    @Autowired
-    lateinit var userService: UserService
+class UserController(var userService: UserService){
 
     @ApiOperation(value = "Add an user")
     @PostMapping("/addUser")
